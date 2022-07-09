@@ -56,7 +56,7 @@ static int ad400x_probe(struct platform_device *pdev)
 
 #ifdef CONFIG_OF
 static const struct of_device_id ad400x_ids[] = {
-	{ .compatible = "invensense,ad400x", },
+	{ .compatible = "bugg,ad400x", },
 	{ }
 };
 MODULE_DEVICE_TABLE(of, ad400x_ids);
