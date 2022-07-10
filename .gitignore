@@ -11,4 +11,4 @@ bugg-ad400x.mod.c
 bugg-ad400x.mod.o
 bugg-ad400x.o
 modules.order
-
+*.dtbo
