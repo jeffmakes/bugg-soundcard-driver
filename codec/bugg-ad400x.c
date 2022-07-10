@@ -23,7 +23,8 @@
 #include <sound/tlv.h>
 
 #define AD400X_RATE_MIN 7190 /* Hz, from data sheet */
-#define AD400X_RATE_MAX 52800  /* Hz, from data sheet */
+//#define AD400X_RATE_MAX 52800  /* Hz, from data sheet */
+#define AD400X_RATE_MAX 1000000  /* Hz, from data sheet */
 
 #define AD400X_FORMATS (SNDRV_PCM_FMTBIT_S24_LE | SNDRV_PCM_FMTBIT_S32)
 
@@ -31,7 +32,7 @@ static struct snd_soc_dai_driver ad400x_dai = {
 	.name = "ad400x-hifi",
 	.capture = {
 		.stream_name = "Capture",
-		.channels_min = 1,
+		.channels_min = 2,
 		.channels_max = 2,
 		.rate_min = AD400X_RATE_MIN,
 		.rate_max = AD400X_RATE_MAX,
