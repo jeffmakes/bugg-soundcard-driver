@@ -1,0 +1,30 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2711";
+
+sound {
+	compatible = "simple-audio-card";
+	simple-audio-card,name = "Bugg Sound Card";
+	simple-audio-card,format = "i2s";
+	simple-audio-card,bitclock-master = <&dailink0_master>;
+	simple-audio-card,frame-master = <&dailink0_master>;
+    status = "okay";
+
+    codec {
+        #sound-dai-cells = <0>;
+        compatible = "invensense,ics43432";
+        status = "okay";
+    };
+
+	dailink0_master: simple-audio-card,cpu {
+		sound-dai = <&i2s>;
+	};
+};
+};
+&i2s {
+    status = "okay";
+};
+
+
