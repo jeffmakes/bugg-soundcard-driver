@@ -39,13 +39,13 @@
                 sound-dai = <&card_codec>;
             };
         };
-    };
+   };
 
     fragment@3 {
         target = <&sound>;
         slave_overlay: __overlay__ {
                 compatible = "simple-audio-card";
-                simple-audio-card,format = "i2s";
+                simple-audio-card,format = "left_j";
                 simple-audio-card,name = "soundcard";
                 status = "okay";
                 simple-audio-card,cpu {
