@@ -13,5 +13,5 @@ clean:
 install:
 	for dir in /lib/modules/*; do \
 		sudo cp bugg-ad400x.ko $$dir; \
-		sudo depmod -a -b $$dir; \
 	done
+	sudo depmod -a
