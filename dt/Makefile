@@ -7,6 +7,7 @@ bugg-soundcard.dtbo: bugg-soundcard.dts
 # Install the compiled device tree overlay
 install: bugg-soundcard.dtbo
 	cp $< /boot/overlays/
+	echo "dtoverlay=bugg-soundcard" >> /boot/firmware/config.txt
 
 # Clean up build artifacts
 clean:
