@@ -1,18 +1,11 @@
 obj-m := bugg-ad400x.o
 
 all:
-	for dir in /lib/modules/*; do \
-		make -C $$dir/build M=$(PWD) modules; \
-	done
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:
-	for dir in /lib/modules/*; do \
-		make -C $$dir/build M=$(PWD) clean; \
-	done
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
 install:
-	for dir in /lib/modules/*; do \
-		sudo cp bugg-ad400x.ko $$dir; \
-		echo $$dir; \
-		sudo depmod -a `basename $$dir`; \
-	done
+	sudo cp bugg-ad400x.ko /lib/modules/$(shell uname -r)
+	sudo depmod -a
